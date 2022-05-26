@@ -1,3 +1,4 @@
+import 'package:arcade_42/utils/user.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -14,43 +15,11 @@ class _HomePageState extends State<HomePage> {
     return SafeArea(
       child: Scaffold(
         backgroundColor: Color(0xff292d39),
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
+        body: ListView(
           children: [
-            Padding(
-              padding: const EdgeInsets.only(top: 32.0),
-              child: Center(
-                child: CircleAvatar(
-                  backgroundImage: AssetImage('components/profile.jpg'),
-                  radius: 40.0,
-                ),
-              ),
-            ),
-            SizedBox(
-              height: 10.5,
-            ),
-            Text(
-              "John Oriente",
-              style: GoogleFonts.robotoSerif(
-                  fontSize: 25.0,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white70),
-            ),
-            Text(
-              "(jdoe)",
-              style: GoogleFonts.robotoSerif(
-                  fontSize: 12.0,
-                  fontWeight: FontWeight.normal,
-                  color: Colors.white70),
-            ),
-            Divider(
-              height: 60.0,
-              color: Colors.grey[800],
-              indent: 32.0,
-              endIndent: 32.0,
-            ),
-            Padding(
-              padding: EdgeInsets.only(right: 200),
+            // ============= MOEDAS =============
+            Align(
+              alignment: Alignment.topLeft,
               child: Container(
                 width: 80.0,
                 height: 40.0,
@@ -81,6 +50,50 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
               ),
+            ),
+
+            // ============= FOTO =============
+            Padding(
+              padding: const EdgeInsets.only(top: 32.0),
+              child: Center(
+                child: CircleAvatar(
+                  backgroundImage: AssetImage('components/profile.jpg'),
+                  radius: 40.0,
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 10.5,
+            ),
+
+            // ============= NOME =============
+            Center(
+              child: Text(
+                "John Orienta",
+                style: GoogleFonts.robotoSerif(
+                    fontSize: 25.0,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white70),
+              ),
+            ),
+
+            // ============= USERNAME =============
+            Center(
+              child: Text(
+                "(jdoe)",
+                style: GoogleFonts.robotoSerif(
+                    fontSize: 12.0,
+                    fontWeight: FontWeight.normal,
+                    color: Colors.white70),
+              ),
+            ),
+
+            // ============= DIVISOR =============
+            Divider(
+              height: 60.0,
+              color: Colors.grey[800],
+              indent: 32.0,
+              endIndent: 32.0,
             ),
             SizedBox(
               height: 20.0,
