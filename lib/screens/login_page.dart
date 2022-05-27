@@ -77,7 +77,9 @@ class _LoginPageState extends State<LoginPage> {
                         primary: Color(0xff01babc),
                         onPrimary: Colors.black),
 
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushReplacementNamed(context, '/HomePage');
+                    },
                     child: Text('Login via Intra'),
                   ),
                 )

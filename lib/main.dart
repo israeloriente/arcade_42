@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp(MaterialApp(
-    home: const HomePage(),
+    home: const LoginPage(),
     debugShowCheckedModeBanner: false,
     routes: {
       '/Login': (context) => const LoginPage(),
