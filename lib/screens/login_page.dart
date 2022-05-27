@@ -15,33 +15,40 @@ class _LoginPageState extends State<LoginPage> {
       child: Scaffold(
         body: Stack(
           children: <Widget>[
+            // ============= BACKGROUND IMAGE ================
             Image.asset(
               'components/arcade_back.jpg',
               fit: BoxFit.cover,
               width: double.infinity,
               height: double.infinity,
             ),
+
+            // ============ SHADE ==================
             Container(
               color: Colors.blueGrey[900]?.withOpacity(0.5),
               width: double.infinity,
               height: double.infinity,
             ),
-            Column(
+
+
+            ListView(
               children: [
+                // =============== 42LISBOA LOGO ===============
                 Container(
-                  child: Container(
-                      alignment: Alignment.center,
-                      padding: EdgeInsets.only(top: 8.0),
-                      child: Image.asset(
-                        "components/42_lisboa.png",
-                        fit: BoxFit.fill,
-                        height: 100.0,
-                        width: 110.0,
-                      )),
-                ),
+                    alignment: Alignment.center,
+                    padding: EdgeInsets.only(top: 8.0),
+                    child: Image.asset(
+                      "components/42_lisboa.png",
+                      fit: BoxFit.fill,
+                      height: 100.0,
+                      width: 110.0,
+                    )),
+
                 SizedBox(
                   height: 0.0,
                 ),
+
+                // ============== ARCADE LOGO ============
                 Container(
                   child: Container(
                       alignment: Alignment.center,
@@ -53,9 +60,13 @@ class _LoginPageState extends State<LoginPage> {
                         width: 250.0,
                       )),
                 ),
+
+
                 SizedBox(
                   height: 250.0,
                 ),
+
+                // ================== LOGIN BUTTON =====================
                 Container(
                   alignment: Alignment.center,
                   padding: EdgeInsets.all(32.0),
