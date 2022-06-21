@@ -16,8 +16,8 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    Offset distance = Offset(20, 20);
-    Offset nDistance = Offset(10, 10);
+    Offset distance = const Offset(20, 20);
+    Offset nDistance = const Offset(10, 10);
     double blur = 30.0;
     double nBlur = 5;
 
@@ -35,7 +35,7 @@ class _HomePageState extends State<HomePage> {
                   width: 80.0,
                   height: 40.0,
                   decoration: BoxDecoration(
-                      color: Color(0xff01babc),
+                      color: const Color(0xff01babc),
                       borderRadius: BorderRadius.circular(20.0)),
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -65,8 +65,8 @@ class _HomePageState extends State<HomePage> {
             ),
 
             // ============= PHOTO =============
-            Padding(
-              padding: const EdgeInsets.only(top: 32.0),
+            const Padding(
+              padding: EdgeInsets.only(top: 32.0),
               child: Center(
                 child: CircleAvatar(
                   backgroundImage: AssetImage('components/profile.jpg'),
@@ -74,14 +74,14 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10.5,
             ),
 
             // ============= NAME =============
             Center(
               child: Text(
-                "John Orienta",
+                "John Doe",
                 style: GoogleFonts.robotoSerif(
                     fontSize: 25.0,
                     fontWeight: FontWeight.bold,
@@ -107,7 +107,7 @@ class _HomePageState extends State<HomePage> {
               indent: 32.0,
               endIndent: 32.0,
             ),
-            SizedBox(
+            const SizedBox(
               height: 20.0,
             ),
 
@@ -116,39 +116,38 @@ class _HomePageState extends State<HomePage> {
               padding: const EdgeInsets.only(right: 180.0),
               child: Center(
                 child: GestureDetector(
-                  onTap: (){
+                  onTap: () {
                     setState(() {
                       playIsPressed = !playIsPressed;
                     });
                   },
                   child: AnimatedContainer(
-                    duration: Duration(milliseconds: 600),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(30.0),
-                    color: Color(0xff292d39),
-                    boxShadow: [
-                      BoxShadow(
-                        offset: playIsPressed ? nDistance : distance,
-                        color: Color(0xff101217),
-                        blurRadius: playIsPressed ? nBlur : blur,
-                        inset: playIsPressed,
-                      ),
-                      BoxShadow(
-                          offset: playIsPressed ? -nDistance : -distance,
-                          color: Color(0xff323644),
-                          blurRadius: playIsPressed ? nBlur : blur,
-                        inset: playIsPressed,
-                      ),
-                    ]
-                  ),
-                  width: 150,
-                  height: 150,
-                  child: Icon(
+                    duration: const Duration(milliseconds: 600),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(30.0),
+                        color: const Color(0xff292d39),
+                        boxShadow: [
+                          BoxShadow(
+                            offset: playIsPressed ? nDistance : distance,
+                            color: const Color(0xff101217),
+                            blurRadius: playIsPressed ? nBlur : blur,
+                            inset: playIsPressed,
+                          ),
+                          BoxShadow(
+                            offset: playIsPressed ? -nDistance : -distance,
+                            color: const Color(0xff323644),
+                            blurRadius: playIsPressed ? nBlur : blur,
+                            inset: playIsPressed,
+                          ),
+                        ]),
+                    width: 150,
+                    height: 150,
+                    child: const Icon(
                       LineAwesomeIcons.play,
-                    size: 120,
-                    color: Color(0xff01babc),
-                  ),
+                      size: 120,
+                      color: Color(0xff01babc),
                     ),
+                  ),
                 ),
               ),
             ),
@@ -158,34 +157,33 @@ class _HomePageState extends State<HomePage> {
               padding: const EdgeInsets.only(left: 180.0),
               child: Center(
                 child: GestureDetector(
-                  onTap: (){
+                  onTap: () {
                     setState(() {
                       donateIsPressed = !donateIsPressed;
                     });
                   },
                   child: AnimatedContainer(
-                    duration: Duration(milliseconds: 600),
+                    duration: const Duration(milliseconds: 600),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(30.0),
-                        color: Color(0xff292d39),
+                        color: const Color(0xff292d39),
                         boxShadow: [
                           BoxShadow(
                             offset: donateIsPressed ? nDistance : distance,
-                            color: Color(0xff101217),
+                            color: const Color(0xff101217),
                             blurRadius: donateIsPressed ? nBlur : blur,
                             inset: donateIsPressed,
                           ),
                           BoxShadow(
                             offset: donateIsPressed ? -nDistance : -distance,
-                            color: Color(0xff323644),
+                            color: const Color(0xff323644),
                             blurRadius: donateIsPressed ? nBlur : blur,
                             inset: donateIsPressed,
                           ),
-                        ]
-                    ),
+                        ]),
                     width: 150,
                     height: 150,
-                    child: Icon(
+                    child: const Icon(
                       LineAwesomeIcons.donate,
                       size: 120,
                       color: Color(0xff01babc),
@@ -195,7 +193,9 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
 
-            SizedBox(height: 50.0,),
+            const SizedBox(
+              height: 50.0,
+            ),
 
             // ============== SHARE BUTTON ================
             Center(
@@ -204,24 +204,25 @@ class _HomePageState extends State<HomePage> {
                 height: 50.0,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50.0),
-                  boxShadow: [
-                BoxShadow(
-                offset: Offset(10, 10),
-                  color: Color(0xff101217),
-                  blurRadius: 30.0,
-                  inset: false,
-                ),
-                BoxShadow(
-                  offset: Offset(-10, -10),
-                  color: Color(0xff323644),
-                  blurRadius: 30.0,
-                  inset: false,
-                )],
+                  boxShadow: const [
+                    BoxShadow(
+                      offset: Offset(10, 10),
+                      color: Color(0xff101217),
+                      blurRadius: 30.0,
+                      inset: false,
+                    ),
+                    BoxShadow(
+                      offset: Offset(-10, -10),
+                      color: Color(0xff323644),
+                      blurRadius: 30.0,
+                      inset: false,
+                    )
+                  ],
                 ),
                 child: IconButton(
-                  onPressed: (){},
-                  icon: Icon(LineAwesomeIcons.share),
-                  color: Color(0xff01babc),
+                  onPressed: () {},
+                  icon: const Icon(LineAwesomeIcons.share),
+                  color: const Color(0xff01babc),
                 ),
               ),
             )
