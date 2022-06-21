@@ -23,7 +23,7 @@ class _HomePageState extends State<HomePage> {
 
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Color(0xff292d39),
+        backgroundColor: const Color(0xff292d39),
         body: ListView(
           children: [
             // ============= COINS =============
