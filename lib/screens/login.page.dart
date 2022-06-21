@@ -1,5 +1,7 @@
+import 'package:arcade_42/models/environment.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -9,6 +11,7 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  final Uri _url = Uri.parse(Environment.intraUrl);
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -17,7 +20,7 @@ class _LoginPageState extends State<LoginPage> {
           children: <Widget>[
             // ============= BACKGROUND IMAGE ================
             Image.asset(
-              'components/arcade_back.jpg',
+              'assets/arcade_back.jpg',
               fit: BoxFit.cover,
               width: double.infinity,
               height: double.infinity,
@@ -30,7 +33,6 @@ class _LoginPageState extends State<LoginPage> {
               height: double.infinity,
             ),
 
-
             ListView(
               children: [
                 // =============== 42LISBOA LOGO ===============
@@ -38,7 +40,7 @@ class _LoginPageState extends State<LoginPage> {
                     alignment: Alignment.center,
                     padding: const EdgeInsets.only(top: 8.0),
                     child: Image.asset(
-                      "components/42_lisboa.png",
+                      "assets/42_lisboa.png",
                       fit: BoxFit.fill,
                       height: 100.0,
                       width: 110.0,
@@ -53,12 +55,11 @@ class _LoginPageState extends State<LoginPage> {
                     alignment: Alignment.center,
                     padding: const EdgeInsets.only(top: 8.0),
                     child: Image.asset(
-                      "components/arcade_logo.png",
+                      "assets/arcade_logo.png",
                       fit: BoxFit.fill,
                       height: 100.0,
                       width: 250.0,
                     )),
-
 
                 const SizedBox(
                   height: 250.0,
@@ -71,12 +72,12 @@ class _LoginPageState extends State<LoginPage> {
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
                         minimumSize: const Size(190, 55),
-                        textStyle: GoogleFonts.robotoSerif(fontSize: 16, fontWeight: FontWeight.bold),
+                        textStyle: GoogleFonts.robotoSerif(
+                            fontSize: 16, fontWeight: FontWeight.bold),
                         primary: const Color(0xff01babc),
                         onPrimary: Colors.black),
-
                     onPressed: () {
-                      Navigator.pushReplacementNamed(context, '/HomePage');
+                      _launchUrl();
                     },
                     child: const Text('Login via Intra'),
                   ),
@@ -87,5 +88,10 @@ class _LoginPageState extends State<LoginPage> {
         ),
       ),
     );
+  }
+
+  /// Opening the Browser
+  void _launchUrl() async {
+    if (!await launchUrl(_url)) throw 'Could not launch $_url';
   }
 }

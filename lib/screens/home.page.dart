@@ -2,6 +2,7 @@ import 'package:flutter/material.dart' hide BoxDecoration, BoxShadow;
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_inset_box_shadow/flutter_inset_box_shadow.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
+import 'package:arcade_42/services/api/parse.service.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -44,7 +45,7 @@ class _HomePageState extends State<HomePage> {
                       Padding(
                         padding: const EdgeInsets.only(left: 5.0),
                         child: Image.asset(
-                          "components/coin.png",
+                          "assets/coin.png",
                           fit: BoxFit.fill,
                           height: 25.0,
                           width: 25.0,
@@ -69,7 +70,7 @@ class _HomePageState extends State<HomePage> {
               padding: EdgeInsets.only(top: 32.0),
               child: Center(
                 child: CircleAvatar(
-                  backgroundImage: AssetImage('components/profile.jpg'),
+                  backgroundImage: AssetImage('assets/profile.jpg'),
                   radius: 40.0,
                 ),
               ),
@@ -119,6 +120,7 @@ class _HomePageState extends State<HomePage> {
                   onTap: () {
                     setState(() {
                       playIsPressed = !playIsPressed;
+                      initParse();
                     });
                   },
                   child: AnimatedContainer(

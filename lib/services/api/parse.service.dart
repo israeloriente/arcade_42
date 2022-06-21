@@ -1,20 +1,21 @@
-// ignore_for_file: avoid_print
-import 'package:arcade_42/models/environment.dart';
+import 'package:flutter/foundation.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:parse_server_sdk_flutter/parse_server_sdk.dart';
 
 /// Init Parse Server Backend
 void initParse() async {
-  var keyApplicationId = Environment.appId;
-  var keyClientKey = Environment.clientKey;
-  var keyParseServerUrl = Environment.serverUrl;
+  var keyApplicationId = dotenv.get('APP_ID', fallback: '');
+  var keyClientKey = dotenv.get('CLIENT_KEY', fallback: '');
+  var keyParseServerUrl = dotenv.get('SERVER_URL', fallback: '');
 
   // Function to initialize Parse Server SDK
-  // Without initialization nothing can be done
   await Parse()
       .initialize(keyApplicationId, keyParseServerUrl,
           clientKey: keyClientKey, autoSendSessionId: true)
       .catchError((e) {
     // if some error occurs, print it
-    print(e);
+    if (kDebugMode) {
+      print(e);
+    }
   });
 }
