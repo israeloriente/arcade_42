@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "829571476966",
+    "project_id": "arcade-42",
+    "storage_bucket": "arcade-42.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:829571476966:android:eeca5a694ad2877db13a27",
+        "android_client_info": {
+          "package_name": "com.example.arcade_42"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "829571476966-d7u46mn8h969e0l1qhjl1d0qfhagm1g4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.arcade_42",
+            "certificate_hash": "89c6e88a18bcd624e121599b8e6d9e191910373d"
+          }
+        },
+        {
+          "client_id": "829571476966-b0oe6nfg6ogmioc6vrkbrisig6n8sshr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDuAcpc12utvOc1SiIC4GY7QHAf2qatuvQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "829571476966-b0oe6nfg6ogmioc6vrkbrisig6n8sshr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
